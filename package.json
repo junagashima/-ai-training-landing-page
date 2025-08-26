@@ -1,0 +1,14 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python3 -m http.server 3000",
+    "dev": "python3 -m http.server 3000"
+  },
+  "keywords": ["AI", "training", "workshop", "business"],
+  "author": "眼から鱗合同会社",
+  "license": "ISC",
+  "description": "AI研修プログラムのランディングページ"
+}

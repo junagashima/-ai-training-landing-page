@@ -1,0 +1,40 @@
+User-agent: *
+Allow: /
+
+# メインサイトマップ
+Sitemap: https://capable-pika-371604.netlify.app/sitemap.xml
+
+# 特定のボットに対する指示
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# AI検索エンジン対応
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# ブロックするファイル・ディレクトリ
+Disallow: /css/
+Disallow: /js/
+Disallow: /videos/
+Disallow: /*.log
+Disallow: /formrun-test.html
+
+# 重要なページを明示
+# 中小企業のAI導入に関するコンテンツ
+# はじめてのAI導入支援
+# 業務効率・デジタル化・生産性向上
+# AI研修プログラム

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formrun埋め込みテスト</title>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .form-option {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .note {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>formrun埋め込み方法のテスト</h1>
+    
+    <div class="form-option">
+        <h2>オプション1: チームID + フォームID</h2>
+        <div class="note">URL形式: https://form.run/@{チームID}-{フォームID}</div>
+        <iframe 
+            src="https://form.run/@360904-949839" 
+            width="100%" 
+            height="600" 
+            frameborder="0"
+            style="border:1px solid #ddd;">
+        </iframe>
+    </div>
+
+    <div class="form-option">
+        <h2>オプション2: フォームIDのみ</h2>
+        <div class="note">URL形式: https://form.run/@{フォームID}</div>
+        <iframe 
+            src="https://form.run/@949839" 
+            width="100%" 
+            height="600" 
+            frameborder="0"
+            style="border:1px solid #ddd;">
+        </iframe>
+    </div>
+
+    <div class="form-option">
+        <h2>オプション3: JavaScript埋め込み（推奨）</h2>
+        <div class="note">
+            formrunの管理画面から取得したスクリプトタグを使用<br>
+            ※実際のスクリプトURLはformrun管理画面で確認してください
+        </div>
+        <div id="formrun-embed-area">
+            <!-- ここにformrunのJavaScript埋め込みコードを配置 -->
+            <script src="https://sdk.form.run/js/v2/formrun.js"></script>
+            <div
+                class="formrun-embed"
+                data-formrun-form="@360904-949839"
+                data-formrun-redirect="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-option">
+        <h2>オプション4: 直接リンク</h2>
+        <div class="note">フォームへの直接リンクとして使用</div>
+        <a href="https://form.run/@360904-949839" target="_blank" style="
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        ">
+            フォームを開く（別ウィンドウ）
+        </a>
+    </div>
+
+    <div class="form-option" style="background: #fff3cd; border-color: #ffc107;">
+        <h2>formrun設定確認事項</h2>
+        <ul>
+            <li><strong>埋め込み許可設定</strong>: formrun管理画面で、外部サイトへの埋め込みを許可する必要があります</li>
+            <li><strong>ドメイン設定</strong>: 特定のドメインのみ埋め込み可能な設定の場合、開発環境のドメインを追加してください</li>
+            <li><strong>公開設定</strong>: フォームが「公開」状態になっているか確認してください</li>
+            <li><strong>正しい埋め込みコード</strong>: formrun管理画面の「設置」または「埋め込み」メニューから正確なコードを取得してください</li>
+        </ul>
+    </div>
+</body>
+</html>

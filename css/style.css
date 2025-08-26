@@ -1,0 +1,1634 @@
+/* ================================================
+   AI研修LP - スタイルシート
+   歯科経営LPのデザインを参考にした画像中心のビジュアル設計
+   ================================================ */
+
+/* ================================================
+   リセット・ベース設定
+   ================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* ================================================
+   共通レイアウト
+   ================================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+}
+
+/* ================================================
+   ヘッダー（固定）
+   ================================================ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.header-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-tel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-tel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.header-cta {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .header-inner {
+        padding: 10px 15px;
+    }
+    
+    .header-logo {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .header-nav {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+    
+    .header-nav a[href*="effervescent-boba"] {
+        font-size: 12px !important;
+        order: 1;
+    }
+    
+    .header-nav a[href="#faq"] {
+        font-size: 12px;
+        order: 2;
+    }
+    
+    .header-tel span {
+        display: none;
+    }
+    
+    .header-cta {
+        padding: 8px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+        order: 3;
+    }
+    
+    .header-cta span {
+        display: inline-block;
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* ================================================
+   ヒーローセクション
+   ================================================ */
+.hero {
+    margin-top: 70px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+}
+
+.hero-visual {
+    position: relative;
+    width: 100%;
+}
+
+.hero-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero-title {
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease;
+}
+
+.title-main {
+    display: block;
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title-sub {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.hero-lead {
+    font-size: 18px;
+    margin-bottom: 40px;
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero-cta {
+    animation: fadeInUp 1.4s ease;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+    }
+    
+    .title-main {
+        font-size: 32px;
+    }
+    
+    .title-sub {
+        font-size: 24px;
+    }
+    
+    .hero-lead {
+        font-size: 16px;
+    }
+}
+
+/* ================================================
+   セクションヘッダー共通
+   ================================================ */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.title-en {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.title-ja {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+.section-lead {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: 40px;
+    }
+    
+    .title-ja {
+        font-size: 24px;
+    }
+    
+    .section-lead {
+        font-size: 16px;
+    }
+}
+
+/* ================================================
+   動画セクション
+   ================================================ */
+.video-section {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.video-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .video-section {
+        padding: 60px 0;
+    }
+    
+    .video-wrapper {
+        border-radius: 10px;
+    }
+}
+
+/* ================================================
+   問題提起セクション
+   ================================================ */
+.problem {
+    background: #f8f9fa;
+}
+
+.problem-image {
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.problem-item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.problem-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.problem-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+}
+
+.problem-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f5576c;
+    margin-bottom: 10px;
+}
+
+.problem-subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.problem-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ================================================
+   ソリューションセクション
+   ================================================ */
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.solution-item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.solution-content.full-width {
+    width: 100%;
+}
+
+.solution-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.solution-title i {
+    color: #667eea;
+    font-size: 28px;
+}
+
+.solution-text {
+    color: #666;
+    line-height: 1.8;
+}
+
+.solution-image {
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================================
+   プログラムセクション
+   ================================================ */
+.program {
+    background: #f8f9fa;
+}
+
+.program-image {
+    margin-bottom: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.program-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.program-day {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.day-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.day-number {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.day-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.day-content {
+    padding: 40px;
+}
+
+.session-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.session-item {
+    display: flex;
+    gap: 15px;
+}
+
+.session-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.session-item h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.session-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.tools-used {
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tools-label {
+    font-weight: bold;
+    color: #666;
+}
+
+.tool-badge {
+    background: #f0f0f0;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* DAY3の特別レイアウト */
+.work-themes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.theme-item {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.theme-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.theme-content h5 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.theme-content p {
+    font-size: 14px;
+    color: #666;
+}
+
+.presentation-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.presentation-info i {
+    font-size: 24px;
+    color: #667eea;
+    flex-shrink: 0;
+}
+
+.presentation-info h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.presentation-info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ================================================
+   効果セクション
+   ================================================ */
+.effects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.effect-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.effect-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.effect-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+}
+
+.effect-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.effect-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ================================================
+   講師紹介セクション
+   ================================================ */
+.instructor {
+    background: #f8f9fa;
+}
+
+.instructor-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.instructor-image {
+    flex: 0 0 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-info {
+    flex: 1;
+}
+
+.instructor-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.instructor-title {
+    font-size: 18px;
+    color: #667eea;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.instructor-bio {
+    margin-bottom: 30px;
+}
+
+.instructor-bio p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.instructor-achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.achievement-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.achievement-item i {
+    font-size: 32px;
+    color: #667eea;
+    flex-shrink: 0;
+}
+
+.achievement-item h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.achievement-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.achievement-item strong {
+    color: #f5576c;
+    font-size: 20px;
+}
+
+.instructor-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #667eea;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.link-button.youtube {
+    background: #ff0000;
+}
+
+.link-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .instructor-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .instructor-image {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* ================================================
+   価格セクション
+   ================================================ */
+.price-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-table {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.price-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.price-table th {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+    width: 30%;
+}
+
+.price-table td {
+    padding: 20px;
+    color: #666;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.equipment-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.equipment-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.equipment-list i {
+    color: #667eea;
+}
+
+.price-box {
+    flex: 0 0 350px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.price-header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.price-header h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.price-amount {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.price-value {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.price-unit {
+    font-size: 24px;
+}
+
+.price-tax {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.price-detail {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.price-detail p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.price-note {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.price-footer {
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.price-footer p {
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .price-content {
+        flex-direction: column;
+    }
+    
+    .price-box {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* ================================================
+   CTAセクション
+   ================================================ */
+.cta-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cta-lead {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .cta-title {
+        font-size: 28px;
+    }
+    
+    .cta-lead {
+        font-size: 16px;
+    }
+}
+
+/* ================================================
+   お問い合わせセクション
+   ================================================ */
+.contact {
+    background: #f8f9fa;
+}
+
+.contact-content {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.form-wrapper {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-wrapper iframe {
+    border-radius: 10px;
+}
+
+/* formrun埋め込みスタイル */
+.formrun-embed {
+    min-height: 600px;
+    width: 100%;
+}
+
+.contact-info {
+    flex: 0 0 350px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #667eea;
+    flex-shrink: 0;
+}
+
+.contact-item h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contact-tel {
+    font-size: 24px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.contact-hours {
+    font-size: 14px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* ================================================
+   フッター
+   ================================================ */
+.footer {
+    background: #333;
+    color: white;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* ================================================
+   固定ボトムCTA（モバイル）
+   ================================================ */
+.fixed-bottom-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .fixed-bottom-cta {
+        display: flex;
+    }
+    
+    .fixed-bottom-cta a {
+        flex: 1;
+        padding: 15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .bottom-form {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        width: 100%;
+    }
+    
+    body {
+        padding-bottom: 60px;
+    }
+}
+
+/* ================================================
+   ボタン
+   ================================================ */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 40px;
+    background: white;
+    color: #667eea;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary.large {
+    padding: 20px 50px;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .btn-primary {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    .btn-primary.large {
+        padding: 15px 35px;
+        font-size: 18px;
+    }
+}
+
+/* ================================================
+   アニメーション
+   ================================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* スクロールアニメーション用クラス */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================================
+   固定追尾ボタン（デスクトップ）
+   ================================================ */
+.floating-cta {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.floating-cta.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.floating-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.floating-btn span {
+    display: inline-block;
+}
+
+.floating-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+}
+
+.floating-btn i {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .floating-cta {
+        display: none;
+    }
+}
+
+/* ================================================
+   CEO Banner セクション
+   ================================================ */
+.ceo-banner {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.ceo-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23pattern)"/></svg>');
+    opacity: 0.3;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.banner-left {
+    flex: 1;
+}
+
+.banner-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.banner-title {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.banner-title i {
+    color: #FFD700;
+    margin-right: 10px;
+}
+
+.banner-text {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.banner-features {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.banner-features li {
+    padding: 8px 0;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.banner-features i {
+    color: #90EE90;
+    font-size: 14px;
+}
+
+.banner-right {
+    flex: 0 0 300px;
+    text-align: center;
+}
+
+.banner-image {
+    margin-bottom: 30px;
+}
+
+.banner-icon {
+    font-size: 80px;
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.btn-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: white;
+    color: #f5576c;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: #f5576c;
+}
+
+.banner-note {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .banner-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .banner-right {
+        flex: none;
+        width: 100%;
+    }
+    
+    .banner-title {
+        font-size: 28px;
+    }
+    
+    .banner-text {
+        font-size: 15px;
+    }
+    
+    .banner-features {
+        text-align: left;
+        display: inline-block;
+    }
+}
+
+/* ================================================
+   CEO Mini Banner
+   ================================================ */
+.ceo-mini-banner {
+    background: #f8f9fa;
+    padding: 30px 0;
+    border-top: 3px solid #f5576c;
+    border-bottom: 3px solid #f5576c;
+}
+
+.mini-banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.mini-banner-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.mini-banner-text i {
+    color: #f5576c;
+    font-size: 20px;
+}
+
+.mini-banner-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.mini-banner-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .mini-banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .mini-banner-text {
+        justify-content: center;
+    }
+}
+
+/* ================================================
+   FAQセクション
+   ================================================ */
+.faq {
+    background: #f8f9fa;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    padding: 25px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #f8f9fa;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.faq-question i {
+    color: #667eea;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px 30px 30px;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    margin: 0;
+    line-height: 1.7;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 20px 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 16px;
+    }
+    
+    .faq-answer {
+        padding: 0 20px;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 15px 20px 25px;
+    }
+}
+
+/* ================================================
+   ユーティリティ
+   ================================================ */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.pt-40 {
+    padding-top: 40px;
+}
+
+.pb-40 {
+    padding-bottom: 40px;
+}
